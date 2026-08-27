@@ -7,7 +7,7 @@ function Workshops() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:5000/workshops')
+    fetch('https://urban-harvest-hub-production-8721.up.railway.app/workshops')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch workshops')
