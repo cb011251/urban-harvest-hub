@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-harvest-green: #2f6b3f;
+  --color-earth-brown: #8b5e3c;
+  --font-harvest: "Georgia", serif;
+}
+
+@layer components {
+  .harvest-card {
+    @apply rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg;
+  }
+}

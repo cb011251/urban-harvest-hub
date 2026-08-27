@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "name": "Community Garden Day",
+    "category": "Food",
+    "description": "Join the community for a hands-on day of planting and maintaining an urban garden.",
+    "date": "2026-09-12",
+    "location": "Urban Harvest Community Garden",
+    "availability": 25,
+    "price": 500,
+    "image": "garden-day.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Sustainable Living Fair",
+    "category": "Lifestyle",
+    "description": "Explore sustainable products, ideas and practical ways to live more sustainably.",
+    "date": "2026-09-20",
+    "location": "City Community Centre",
+    "availability": 50,
+    "price": 0,
+    "image": "sustainability-fair.jpg"
+
+  },
+  {
+    "id": 3,
+    "name": "Eco Awareness Day",
+    "category": "Education",
+    "description": "Learn about everyday environmental choices and their impact on our communities.",
+    "date": "2026-10-03",
+    "location": "Urban Harvest Hub",
+    "availability": 30,
+    "price": 750,
+    "image": "eco-awareness.jpg"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Organic Gardening Basics",
+    "category": "Food",
+    "description": "Learn the fundamentals of growing healthy food using sustainable gardening methods.",
+    "date": "2026-09-15",
+    "location": "Urban Harvest Community Garden",
+    "availability": 15,
+    "price": 1000,
+    "image": "gardening-workshop.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Composting at Home",
+    "category": "Education",
+    "description": "Discover simple techniques for turning household organic waste into useful compost.",
+    "date": "2026-09-22",
+    "location": "Urban Harvest Hub",
+    "availability": 20,
+    "price": 800,
+    "image": "composting-workshop.jpg"
+  },
+  {
+    "id": 3,
+    "name": "DIY Natural Products",
+    "category": "Lifestyle",
+    "description": "Create simple environmentally friendly household products using natural ingredients.",
+    "date": "2026-10-05",
+    "location": "City Community Centre",
+    "availability": 18,
+    "price": 1200,
+    "image": "natural-products-workshop.jpg"
+  }
+]

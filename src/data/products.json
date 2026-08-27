@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "name": "Organic Banana Box",
+    "category": "Food",
+    "description": "Fresh locally sourced organic bananas packed for sustainable delivery.",
+    "price": 1200,
+    "availability": "In Stock",
+    "image": "organic-bananas.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Bamboo Toothbrush",
+    "category": "Lifestyle",
+    "description": "A biodegradable bamboo toothbrush designed as an eco-friendly alternative.",
+    "price": 650,
+    "availability": "In Stock",
+    "image": "bamboo-toothbrush.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Reusable Water Bottle",
+    "category": "Lifestyle",
+    "description": "A durable reusable bottle designed to reduce single-use plastic consumption.",
+    "price": 1800,
+    "availability": "In Stock",
+    "image": "water-bottle.jpg"
+
+  },
+  {
+    "id": 4,
+    "name": "Natural Soap Set",
+    "category": "Lifestyle",
+    "description": "Handcrafted natural soaps made using environmentally conscious ingredients.",
+    "price": 1500,
+    "availability": "Limited Stock",
+    "image": "natural-soap.jpg"
+  }
+]
