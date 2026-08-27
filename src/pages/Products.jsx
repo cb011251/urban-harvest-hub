@@ -9,7 +9,7 @@ function Products() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://urban-harvest-hub-production-8721.up.railway.app/products')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch products')
