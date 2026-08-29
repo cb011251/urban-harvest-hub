@@ -9,7 +9,7 @@ function Events() {
   const [weather, setWeather] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:5000/events')
+    fetch('https://urban-harvest-hub-production-8721.up.railway.app/events')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch events')

@@ -31,7 +31,7 @@ function Booking() {
     setLoading(true)
 
     try {
-      const response = await fetch('http://localhost:5000/bookings', {
+      const response = await fetch('https://urban-harvest-hub-production-8721.up.railway.app/bookings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
