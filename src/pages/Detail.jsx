@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import images from '../data/images'
 
+const API_URL = 'https://urban-harvest-hub-production-8721.up.railway.app'
+
 function Detail() {
   const { id } = useParams()
   const location = useLocation()
@@ -19,39 +21,60 @@ function Detail() {
   }
 
   useEffect(() => {
-  fetch(`https://urban-harvest-hub-production-8721.up.railway.app/${type}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch data')
-        }
-        return response.json()
-      })
-      .then((data) => {
-        const foundItem = data.find((entry) => {
-          const entryId =
-            type === 'products'
-              ? entry.product_id
-              : type === 'events'
-                ? entry.event_id
-                : entry.workshop_id
+    const loadItem = async () => {
+      try {
+        setLoading(true)
+        setError('')
+        setItem(null)
 
-          return String(entryId) === String(id)
+        const response = await fetch(`${API_URL}/${type}`)
+
+        if (!response.ok) {
+          throw new Error(`API request failed: ${response.status}`)
+        }
+
+        const data = await response.json()
+
+        console.log('Detail type:', type)
+        console.log('Detail ID:', id)
+        console.log('API data:', data)
+
+        const foundItem = data.find((entry) => {
+          if (type === 'products') {
+            return String(entry.product_id) === String(id)
+          }
+
+          if (type === 'workshops') {
+            return String(entry.workshop_id) === String(id)
+          }
+
+          if (type === 'events') {
+            return String(entry.event_id) === String(id)
+          }
+
+          return false
         })
 
         if (!foundItem) {
-          throw new Error('Item not found')
+          throw new Error(`No ${type} found with ID ${id}`)
         }
 
         const formattedItem = {
           ...foundItem,
+
           id:
             type === 'products'
               ? foundItem.product_id
-              : type === 'events'
-                ? foundItem.event_id
-                : foundItem.workshop_id,
+              : type === 'workshops'
+                ? foundItem.workshop_id
+                : foundItem.event_id,
+
           name: foundItem.name || foundItem.title,
-          date: foundItem.event_date || foundItem.workshop_date,
+
+          date:
+            foundItem.event_date ||
+            foundItem.workshop_date,
+
           availability:
             foundItem.stock_quantity !== undefined
               ? foundItem.stock_quantity
@@ -59,13 +82,15 @@ function Detail() {
         }
 
         setItem(formattedItem)
+      } catch (err) {
+        console.error('DETAIL PAGE ERROR:', err)
+        setError(err.message)
+      } finally {
         setLoading(false)
-      })
-      .catch((err) => {
-        console.error(err)
-        setError('Unable to load this item.')
-        setLoading(false)
-      })
+      }
+    }
+
+    loadItem()
   }, [type, id])
 
   const isProduct = type === 'products'
@@ -85,11 +110,11 @@ function Detail() {
       <main className="min-h-screen bg-gray-50 px-6 py-16">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-harvest text-4xl font-bold text-gray-900">
-            Item Not Found
+            Unable to Load Item
           </h1>
 
-          <p className="mt-4 text-gray-600">
-            The item you are looking for could not be found.
+          <p className="mt-4 text-red-600">
+            {error || 'The item could not be found.'}
           </p>
 
           <Link
@@ -146,7 +171,8 @@ function Detail() {
                   </p>
 
                   <p>
-                    <strong>Available places:</strong> {item.availability}
+                    <strong>Available places:</strong>{' '}
+                    {item.availability}
                   </p>
                 </>
               )}
