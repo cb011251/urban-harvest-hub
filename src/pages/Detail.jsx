@@ -19,7 +19,7 @@ function Detail() {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:5000/${type}`)
+  fetch(`https://urban-harvest-hub-production-8721.up.railway.app/${type}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch data')
