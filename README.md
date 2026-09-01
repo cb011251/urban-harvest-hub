@@ -1,16 +1,65 @@
-# React + Vite
+# Urban Harvest Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Urban Harvest Hub is a full-stack Progressive Web Application designed for eco-conscious communities. Users can explore sustainable products, workshops and events, view details and submit bookings.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Frontend
 
-## React Compiler
+- React
+- Vite
+- React Router
+- Tailwind CSS
+- vite-plugin-pwa
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend
 
-## Expanding the ESLint configuration
+- Node.js
+- Express.js
+- MySQL
+- mysql2
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### External API
+
+- Open-Meteo Weather API
+
+### Deployment
+
+- Frontend: Vercel
+- Backend and Database: Railway
+
+## Features
+
+- Browse sustainable products
+- Browse workshops and events
+- Filter events by category
+- View individual product, workshop and event details
+- Submit workshop and event bookings
+- View current Colombo weather
+- Progressive Web Application installation
+- Responsive design for desktop and mobile
+- REST API and MySQL database integration
+
+## Database Setup
+
+The application uses MySQL.
+
+The database contains tables for products, workshops, events and bookings.
+
+The `bookings` table contains:
+
+- `booking_id`
+- `user_id`
+- `event_id`
+- `workshop_id`
+- `booking_date`
+- `status`
+
+The backend connects to the MySQL database using environment variables.
+
+## Running the Frontend
+
+Install the frontend dependencies:
+
+```bash
+npm install
